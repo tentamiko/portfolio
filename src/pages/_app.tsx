@@ -5,16 +5,17 @@ import { injectGlobal } from "@emotion/css";
 injectGlobal`
   html, body, #__next {
     height: 100%;
-  }
+  } 
 
   body {
-      background: #29292b;
-      font-family: "Helvetica Neue",
-        Arial,
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        Meiryo,
-        sans-serif;
+    background: #29292b;
+    color: #ccc;
+    font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      Meiryo,
+      sans-serif;
   }
 `;
 
