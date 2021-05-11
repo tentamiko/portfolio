@@ -4,7 +4,7 @@ import { injectGlobal } from "@emotion/css";
 
 injectGlobal`
   html, body, #__next {
-      min-height: 100%;
+    height: 100%;
   }
 
   body {
