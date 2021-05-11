@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { NextPage } from "next";
 import { Layout } from "../components/Layout/";
+import { Section } from "../components/Section";
 //~/index.tsxはこのように省略できる
 
 //IndexPageというNextPage(Reactコンポーネントの拡張版)を宣言、初期化している。
@@ -26,7 +27,9 @@ const IndexPage: NextPage = () => {
           TENTAMIKO
         </div>
       }
-    ></Layout>
+    >
+      <Section title="Game" url="/game" />
+    </Layout>
   );
 };
 
