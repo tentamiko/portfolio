@@ -10,11 +10,11 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-type Props = { title: string; url: string };
+type Props = { id: string; title: string; url?: string };
 
-export const Section: FC<Props> = ({ title, children, url }) => {
+export const Section: FC<Props> = ({ id, title, children, url }) => {
   return (
-    <section>
+    <section id={id}>
       <h1
         className={css`
           display: flex;
@@ -46,31 +46,34 @@ export const Section: FC<Props> = ({ title, children, url }) => {
           padding: 2rem 0;
         `}
       >
-        <a
-          href={url}
-          className={css`
-            border: solid 2px;
-            border-radius: 2px;
-            color: currentColor;
-            padding: 0.5rem 3rem;
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-decoration: none;
-          `}
-        >
-          MORE
-          <FontAwesomeIcon
-            icon={faArrowAltCircleRight}
+        {/*条件式。どちらかがfalse(urlがnull)のとき(nullである)urlの値を返すので何も表示されない */}
+        {url && (
+          <a
+            href={url}
             className={css`
-              padding: 0 0.3em;
-              box-sizing: content-box;
-              transition: 0.2s transform;
-              a:hover & {
-                transform: translateX(50%);
-              }
+              border: solid 2px;
+              border-radius: 2px;
+              color: currentColor;
+              padding: 0.5rem 3rem;
+              font-size: 1.5rem;
+              font-weight: 300;
+              text-decoration: none;
             `}
-          />
-        </a>
+          >
+            MORE
+            <FontAwesomeIcon
+              icon={faArrowAltCircleRight}
+              className={css`
+                padding: 0 0.3em;
+                box-sizing: content-box;
+                transition: 0.2s transform;
+                a:hover & {
+                  transform: translateX(50%);
+                }
+              `}
+            />
+          </a>
+        )}
       </div>
     </section>
   );

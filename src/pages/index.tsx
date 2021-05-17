@@ -28,7 +28,8 @@ const IndexPage: NextPage = () => {
         </div>
       }
     >
-      <Section title="Game" url="/game" />
+      <Section id="game" title="Game" />
+      <Section id="illustration" title="Illustration" url="/illustration" />
     </Layout>
   );
 };
